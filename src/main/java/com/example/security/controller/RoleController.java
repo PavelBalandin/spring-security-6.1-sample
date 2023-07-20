@@ -2,18 +2,22 @@ package com.example.security.controller;
 
 import com.example.security.dto.RoleDTO;
 import com.example.security.service.RoleService;
-import lombok.RequiredArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
 
 import java.util.Set;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.*;
+
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
 @RequestMapping("api/v1/roles")
 @RequiredArgsConstructor
+@PreAuthorize("isAuthenticated()")
 public class RoleController {
     private final RoleService roleService;
 

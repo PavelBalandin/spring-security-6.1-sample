@@ -7,13 +7,15 @@ import com.example.security.exception.ResourcesAlreadyExistsException;
 import com.example.security.mapper.RoleMapper;
 import com.example.security.repository.RoleRepository;
 import com.example.security.service.RoleService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.BeanUtils;
-import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
+
+import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor

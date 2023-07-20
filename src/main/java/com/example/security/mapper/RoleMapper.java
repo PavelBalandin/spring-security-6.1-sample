@@ -2,9 +2,11 @@ package com.example.security.mapper;
 
 import com.example.security.domain.Role;
 import com.example.security.dto.RoleDTO;
-import lombok.RequiredArgsConstructor;
+
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
+
+import lombok.RequiredArgsConstructor;
 
 @Service
 @RequiredArgsConstructor
