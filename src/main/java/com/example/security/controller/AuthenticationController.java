@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
@@ -28,12 +29,12 @@ public class AuthenticationController {
     private final AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public ResponseEntity<UserDTO> register(@RequestBody RegistrationRequest request) {
+    public ResponseEntity<UserDTO> register(@Valid @RequestBody RegistrationRequest request) {
         return new ResponseEntity<>(authenticationService.register(request), HttpStatus.CREATED);
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
+    public ResponseEntity<AuthenticationResponse> authenticate(@Valid @RequestBody AuthenticationRequest request) {
         AuthenticationResponse response = authenticationService.authenticate(request);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
