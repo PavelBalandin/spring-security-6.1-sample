@@ -17,11 +17,11 @@ import static com.example.security.constants.SecurityConstants.ROLES;
 @Service
 @RequiredArgsConstructor
 public class JWTService {
-    private final Algorithm algorithm;
-    @Value("${jwt.secret})")
-    private String secret;
+
     @Value("${jwt.expired}")
     private long expired;
+
+    private final Algorithm algorithm;
 
     public String generateToken(UserDetails userDetails) {
         return JWT.create()
